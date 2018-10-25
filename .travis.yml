@@ -1,0 +1,24 @@
+language: cpp
+dist: trusty
+sudo: require
+
+matrix:
+  include:
+    - os: linux
+      compiler: clang
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - clang-5.0
+            - clang++-5.0
+            - valgrind
+      env: COMPILER=clang++-5.0
+
+
+
+script:
+  - ${COMPILER} --version
+  - make && ./main
