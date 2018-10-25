@@ -12,6 +12,8 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-trusty-5.0
           packages:
+            - libc++-dev
+            - libc++abi-dev
             - clang-5.0
             - clang++-5.0
             - valgrind
